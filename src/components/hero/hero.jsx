@@ -6,6 +6,7 @@ export const Hero = () => {
   const filteredTerm = useStore((state) => state.filteredTerm);
   const setFilteredTerm = useStore((state) => state.setFilteredTerm);
   const setSearchTerm = useStore((state) => state.setSearchTerm);
+  const setCurrentPage = useStore((state) => state.setCurrentPage);
 
   const dropdownOptions = [
     { value: "", label: "All" },
@@ -34,6 +35,7 @@ export const Hero = () => {
     const selectedValue = e.target.value;
     setFilteredTerm(selectedValue);
     setSearchTerm("");
+    setCurrentPage(1);
   };
 
   return (
