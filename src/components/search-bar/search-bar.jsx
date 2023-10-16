@@ -5,10 +5,12 @@ export const SearchBar = ({ getInitialData }) => {
   const searchTerm = useStore((state) => state.searchTerm);
   const setSearchTerm = useStore((state) => state.setSearchTerm);
   const setCurrentPage = useStore((state) => state.setCurrentPage);
+  const setFilteredTerm = useStore((state) => state.setFilteredTerm);
 
   const handleSeach = () => {
     setCurrentPage(1);
     getInitialData();
+    setFilteredTerm("");
   };
 
   return (
