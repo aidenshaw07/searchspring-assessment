@@ -1,6 +1,11 @@
 import React from "react";
+import { useStore } from "../../zustand/store";
 
-export const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
+export const Pagination = () => {
+  const currentPage = useStore((state) => state.currentPage);
+  const setCurrentPage = useStore((state) => state.setCurrentPage);
+  const totalPages = useStore((state) => state.totalPages);
+
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
   };

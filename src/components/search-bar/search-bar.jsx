@@ -1,11 +1,11 @@
 import React from "react";
+import { useStore } from "../../zustand/store";
 
-export const SearchBar = ({
-  getInitialData,
-  searchTerm,
-  setSearchTerm,
-  setCurrentPage,
-}) => {
+export const SearchBar = ({ getInitialData }) => {
+  const searchTerm = useStore((state) => state.searchTerm);
+  const setSearchTerm = useStore((state) => state.setSearchTerm);
+  const setCurrentPage = useStore((state) => state.setCurrentPage);
+
   const handleSeach = () => {
     setCurrentPage(1);
     getInitialData();
