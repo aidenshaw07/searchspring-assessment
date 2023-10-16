@@ -8,12 +8,15 @@ import { Pagination } from "./components/pagination/pagination";
 import { useStore } from "./zustand/store";
 
 function App() {
+  const data = useStore((state) => state.data);
   const searchTerm = useStore((state) => state.searchTerm);
   const loading = useStore((state) => state.loading);
   const currentPage = useStore((state) => state.currentPage);
   const setData = useStore((state) => state.setData);
   const setLoading = useStore((state) => state.setLoading);
   const setTotalPages = useStore((state) => state.setTotalPages);
+
+  console.log(data);
 
   const getInitialData = async () => {
     try {
