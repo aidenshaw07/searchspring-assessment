@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import { endpoint } from "./api/endpoint";
 import axios from "axios";
 import { Hero } from "./components/hero/hero";
 import { Navbar } from "./components/navbar/navbar";
 import { Pagination } from "./components/pagination/pagination";
+import { useStore } from "./zustand/store";
 
 function App() {
-  const [data, setData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
-  console.log(data);
+  const searchTerm = useStore((state) => state.searchTerm);
+  const currentPage = useStore((state) => state.currentPage);
+  const setData = useStore((state) => state.setData);
+  const setTotalPages = useStore((state) => state.setTotalPages);
 
   const getInitialData = async () => {
     try {
@@ -31,23 +31,10 @@ function App() {
 
   return (
     <>
-      <Navbar
-        getInitialData={getInitialData}
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        setCurrentPage={setCurrentPage}
-      />
-      <Pagination
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        totalPages={totalPages}
-      />
-      <Hero data={data} />
-      <Pagination
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        totalPages={totalPages}
-      />
+      <Navbar getInitialData={getInitialData} />
+      <Pagination />
+      <Hero />
+      <Pagination />
     </>
   );
 }
