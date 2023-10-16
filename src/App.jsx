@@ -8,22 +8,26 @@ import { Pagination } from "./components/pagination/pagination";
 import { useStore } from "./zustand/store";
 
 function App() {
-  const data = useStore((state) => state.data);
   const searchTerm = useStore((state) => state.searchTerm);
   const loading = useStore((state) => state.loading);
   const currentPage = useStore((state) => state.currentPage);
   const setData = useStore((state) => state.setData);
   const setLoading = useStore((state) => state.setLoading);
   const setTotalPages = useStore((state) => state.setTotalPages);
-
-  console.log(data);
+  const filteredTerm = useStore((state) => state.filteredTerm);
 
   const getInitialData = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(
-        `${endpoint}&q=${searchTerm}&page=${currentPage}`
-      );
+      let url;
+      if (searchTerm !== "") {
+        url = `${endpoint}&q=${searchTerm}&page=${currentPage}`;
+      } else if (filteredTerm !== "") {
+        url = `${endpoint}&q=${filteredTerm}&page=${currentPage}`;
+      } else {
+        url = `${endpoint}&page=${currentPage}`;
+      }
+      const res = await axios.get(url);
       setData(res.data);
       setTotalPages(res.data.pagination.totalPages);
     } catch (error) {
@@ -35,7 +39,7 @@ function App() {
 
   useEffect(() => {
     getInitialData();
-  }, [currentPage]);
+  }, [currentPage, filteredTerm]);
 
   if (loading) return <div>Loading...</div>;
 
