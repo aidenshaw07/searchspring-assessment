@@ -9,10 +9,18 @@ export const SearchBar = ({ getInitialData }) => {
   const setSortOption = useStore((state) => state.setSortOption);
 
   const handleSeach = () => {
-    setCurrentPage(1);
-    setFilteredTerm("");
+    setSearchTerm(searchTerm);
     setSortOption("");
+    setFilteredTerm("");
+    setCurrentPage(1);
     getInitialData();
+    console.log("This is called");
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSeach();
+    }
   };
 
   return (
@@ -20,12 +28,8 @@ export const SearchBar = ({ getInitialData }) => {
       <input
         type="text"
         value={searchTerm}
+        onKeyDown={handleKeyPress}
         onChange={(e) => setSearchTerm(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            handleSeach();
-          }
-        }}
       />
       <button
         onClick={() => {
