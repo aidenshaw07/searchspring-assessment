@@ -20,11 +20,12 @@
 }
 
 .cart-item-prices {
+  // border: 1px solid red;
   display: flex;
   text-align: center;
   justify-content: space-evenly;
   font-size: 25px;
-  min-width: 110px;
+  min-width: 80px;
 }
 
 .cart-item-btn {
