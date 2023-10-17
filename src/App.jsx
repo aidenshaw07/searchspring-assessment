@@ -15,17 +15,18 @@ function App() {
   const setLoading = useStore((state) => state.setLoading);
   const setTotalPages = useStore((state) => state.setTotalPages);
   const filteredTerm = useStore((state) => state.filteredTerm);
+  const sortOption = useStore((state) => state.sortOption);
 
   const getInitialData = async () => {
     try {
       setLoading(true);
       let url;
       if (searchTerm !== "") {
-        url = `${endpoint}&q=${searchTerm}&page=${currentPage}`;
+        url = `${endpoint}&${sortOption}&q=${searchTerm}&page=${currentPage}`;
       } else if (filteredTerm !== "") {
-        url = `${endpoint}&q=${filteredTerm}&page=${currentPage}`;
+        url = `${endpoint}&${sortOption}&q=${filteredTerm}&page=${currentPage}`;
       } else {
-        url = `${endpoint}&page=${currentPage}`;
+        url = `${endpoint}&${sortOption}&page=${currentPage}`;
       }
       const res = await axios.get(url);
       setData(res.data);
@@ -39,7 +40,7 @@ function App() {
 
   useEffect(() => {
     getInitialData();
-  }, [currentPage, filteredTerm]);
+  }, [currentPage, filteredTerm, sortOption]);
 
   if (loading) return <div>Loading...</div>;
 
