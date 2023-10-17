@@ -1,4 +1,3 @@
-import React from "react";
 import { useStore } from "../../zustand/store";
 
 export const SearchBar = ({ getInitialData }) => {
@@ -10,11 +9,10 @@ export const SearchBar = ({ getInitialData }) => {
 
   const handleSeach = () => {
     setSearchTerm(searchTerm);
-    setSortOption("");
-    setFilteredTerm("");
     setCurrentPage(1);
+    setFilteredTerm("");
+    setSortOption("");
     getInitialData();
-    console.log("This is called");
   };
 
   const handleKeyPress = (e) => {
@@ -31,13 +29,7 @@ export const SearchBar = ({ getInitialData }) => {
         onKeyDown={handleKeyPress}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <button
-        onClick={() => {
-          handleSeach();
-        }}
-      >
-        Search
-      </button>
+      <button onClick={handleSeach}>Search</button>
     </div>
   );
 };

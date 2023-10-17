@@ -1,4 +1,3 @@
-import React from "react";
 import { useStore } from "../../zustand/store";
 
 const dropdownOptions = [
@@ -17,6 +16,7 @@ export const SortItems = () => {
     const selectedValue = e.target.value;
     setSortOption(selectedValue);
   };
+
   return (
     <div>
       <select value={sortOption} onChange={handleDropdownChange}>
