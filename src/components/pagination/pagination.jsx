@@ -1,4 +1,3 @@
-import React from "react";
 import { useStore } from "../../zustand/store";
 
 export const Pagination = () => {
@@ -13,23 +12,14 @@ export const Pagination = () => {
   const handlePreviousPage = () => {
     setCurrentPage(currentPage - 1);
   };
+
   return (
     <div>
-      <button
-        hidden={currentPage === 1}
-        onClick={() => {
-          handlePreviousPage();
-        }}
-      >
+      <button hidden={currentPage === 1} onClick={handlePreviousPage}>
         Previous Page
       </button>
       {currentPage} of {totalPages}
-      <button
-        hidden={currentPage === totalPages}
-        onClick={() => {
-          handleNextPage();
-        }}
-      >
+      <button hidden={currentPage === totalPages} onClick={handleNextPage}>
         Next Page
       </button>
     </div>

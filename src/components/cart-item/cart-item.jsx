@@ -1,4 +1,3 @@
-import React from "react";
 import { useStore } from "../../zustand/store";
 
 export const CartItem = ({ item }) => {
@@ -9,25 +8,21 @@ export const CartItem = ({ item }) => {
     setShoppingCart(shoppingCart + 1);
   };
 
+  const { name, price, msrp, thumbnailImageUrl } = item;
+
   return (
     <div>
-      <img src={item.thumbnailImageUrl} alt={item.name} />
-      {item.name}
-      {item.msrp > item.price ? (
+      <img src={thumbnailImageUrl} alt={name} />
+      {name}
+      {msrp > price ? (
         <>
-          <div style={{ textDecoration: "line-through" }}>{item.msrp}</div>
-          <div>{item.price}</div>
+          <div style={{ textDecoration: "line-through" }}>{msrp}</div>
+          <div>{price}</div>
         </>
       ) : (
-        <>{item.price}</>
+        <>{price}</>
       )}
-      <button
-        onClick={() => {
-          handleAddToCart();
-        }}
-      >
-        Add To Cart
-      </button>
+      <button onClick={handleAddToCart}>Add To Cart</button>
     </div>
   );
 };

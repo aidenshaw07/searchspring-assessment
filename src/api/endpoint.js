@@ -1,5 +1,2 @@
-export const endpoint = `${
-  import.meta.env.VITE_API_URL
-}/api/search/search.json?siteId=${
-  import.meta.env.VITE_SITE_ID
-}&resultsFormat=native`;
+const { VITE_API_URL, VITE_SITE_ID } = import.meta.env;
+export const endpoint = `${VITE_API_URL}/api/search/search.json?siteId=${VITE_SITE_ID}&resultsFormat=native`;
