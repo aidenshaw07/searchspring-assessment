@@ -6,11 +6,13 @@ export const SearchBar = ({ getInitialData }) => {
   const setSearchTerm = useStore((state) => state.setSearchTerm);
   const setCurrentPage = useStore((state) => state.setCurrentPage);
   const setFilteredTerm = useStore((state) => state.setFilteredTerm);
+  const setSortOption = useStore((state) => state.setSortOption);
 
   const handleSeach = () => {
     setCurrentPage(1);
-    getInitialData();
     setFilteredTerm("");
+    setSortOption("");
+    getInitialData();
   };
 
   return (
