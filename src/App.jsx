@@ -5,7 +5,7 @@ import { Navbar } from "./components/navbar/navbar";
 import { Hero } from "./components/hero/hero";
 import { Pagination } from "./components/pagination/pagination";
 import axios from "axios";
-import "./App.css";
+import "./App.scss";
 
 export const App = () => {
   const loading = useStore((state) => state.loading);

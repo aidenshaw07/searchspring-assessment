@@ -1,0 +1,6 @@
+.container-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(275px, 100%), 1fr));
+  gap: 50px 25px;
+  margin: 0 75px 35px 75px;
+}
