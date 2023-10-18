@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 25%;
+  width: 30%;
   height: 80px;
 }
 
@@ -34,4 +34,34 @@
 .shopping-cart-container img {
   width: 40px;
   height: 40px;
+}
+
+@media screen and (max-width: 1275px) {
+  .search-cart-container {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .search-cart-container {
+    width: 50%;
+  }
+  .shopping-cart-container {
+    width: 50px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .search-cart-container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .logo {
+    margin-left: 15px;
+    width: 80px;
+    height: 40px;
+  }
 }

@@ -1,4 +1,6 @@
 import { useStore } from "../../zustand/store";
+import searchIcon from "../../assets/search-icon.svg";
+import "./search-bar.scss";
 
 export const SearchBar = ({ getInitialData }) => {
   const searchTerm = useStore((state) => state.searchTerm);
@@ -22,14 +24,15 @@ export const SearchBar = ({ getInitialData }) => {
   };
 
   return (
-    <div>
+    <div className="search-bar-container">
       <input
         type="text"
         value={searchTerm}
+        className="search-bar"
         onKeyDown={handleKeyPress}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <button onClick={handleSeach}>Search</button>
+      <img src={searchIcon} className="search-bar-btn" onClick={handleSeach} />
     </div>
   );
 };
