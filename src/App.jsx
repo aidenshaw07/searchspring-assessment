@@ -6,6 +6,7 @@ import { Hero } from "./components/hero/hero";
 import { Pagination } from "./components/pagination/pagination";
 import axios from "axios";
 import "./App.scss";
+import { FilterSortControls } from "./components/filter-sort-controls/filter-sort-controls";
 
 export const App = () => {
   const loading = useStore((state) => state.loading);
@@ -51,6 +52,7 @@ export const App = () => {
   return (
     <>
       <Navbar getInitialData={getInitialData} />
+      <FilterSortControls />
       <Pagination />
       <Hero />
       <Pagination />
