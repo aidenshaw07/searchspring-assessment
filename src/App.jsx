@@ -7,6 +7,7 @@ import { Pagination } from "./components/pagination/pagination";
 import axios from "axios";
 import "./App.scss";
 import { FilterSortControls } from "./components/filter-sort-controls/filter-sort-controls";
+import { Footer } from "./components/footer/footer";
 
 export const App = () => {
   const loading = useStore((state) => state.loading);
@@ -56,6 +57,7 @@ export const App = () => {
       <Pagination />
       <Hero />
       <Pagination />
+      <Footer />
     </>
   );
 };
