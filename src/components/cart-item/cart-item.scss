@@ -23,8 +23,8 @@
   display: flex;
   text-align: center;
   justify-content: space-evenly;
-  font-size: 25px;
-  min-width: 80px;
+  font-size: 1.8rem;
+  min-width: 100px;
 }
 
 .cart-item-btn {
@@ -45,7 +45,7 @@
 
 .cart-item-btn span {
   text-align: center;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 30px;
   color: #34495e;
   transition: all 0.3s ease-out;

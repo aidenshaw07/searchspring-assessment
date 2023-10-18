@@ -5,3 +5,9 @@
   margin: 0 75px 35px 75px;
   min-height: 200px;
 }
+
+@media screen and (max-width: 1275px) {
+  .container-hero {
+    margin: 0 50px 35px 50px;
+  }
+}
