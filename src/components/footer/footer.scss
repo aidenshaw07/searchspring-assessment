@@ -1,56 +1,69 @@
 .footer-container {
   display: grid;
-  grid-template-columns: 2fr 1.5fr 1.5fr;
+  grid-template-columns: 1fr 1fr 1fr;
   border-top: 1px solid #222831;
   box-shadow: 1px -5px 5px 0px rgba(34, 40, 49, 0.61);
   -webkit-box-shadow: 1px -5px 5px 0px rgba(34, 40, 49, 0.61);
   -moz-box-shadow: 1px -5px 5px 0px rgba(34, 40, 49, 0.61);
 }
 
-.company-logo {
+.company-logo-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 20px 30px;
 }
 
-.company-logo div {
+.company-logo-container div {
   font-weight: 900;
-  font-size: 15px;
+  font-size: 1rem;
 }
 
-.company-logo img {
-  width: 250px;
-  height: 150px;
+.company-logo-container img {
+  width: 150px;
+  height: 100px;
 }
 
-.footer-contact-info {
+.footer-contact-info-container {
   display: grid;
   grid-template-columns: 0.3fr 3fr;
   align-items: center;
   padding: 30px;
 }
 
-.footer-contact-info img {
+.footer-contact-info-container img {
   width: 30px;
   height: 30px;
 }
 
-.footer-about {
+.footer-about-container {
   padding: 20px 30px;
 }
 
-.footer-about div {
+.footer-about-container div {
   font-weight: 900;
-  font-size: 15px;
+  font-size: 1rem;
   margin-bottom: 10px;
 }
 
-.footer-about p {
-  font-size: 10px;
+.footer-about-container p {
+  font-size: 0.7rem;
   margin-bottom: 15px;
 }
 
-.footer-about a:last-child {
+.footer-about-container a:last-child {
   margin-left: 15px;
+}
+
+@media screen and (max-width: 950px) {
+  .footer-container {
+    display: block;
+  }
+  .footer-contact-info-container * {
+    margin-bottom: 10px;
+  }
+  .footer-contact-info-container div,
+  a {
+    margin-left: 10px;
+  }
 }

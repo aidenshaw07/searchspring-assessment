@@ -22,7 +22,7 @@ export const CartItem = ({ item }) => {
               style={{
                 textDecoration: "line-through",
                 color: "red",
-                fontSize: "15px",
+                fontSize: "1rem",
               }}
             >
               ${msrp}

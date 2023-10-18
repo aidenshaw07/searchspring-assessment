@@ -14,31 +14,37 @@ export const Pagination = () => {
 
   const handleNextPage = () => handlePageNavigation(nextPage);
   const handlePreviousPage = () => handlePageNavigation(previousPage);
-  const handleNextPage2 = () => handlePageNavigation(nextPage + 1);
-  const handlePreviousPage2 = () => handlePageNavigation(previousPage - 1);
+  const handleNextPagePlusOne = () => handlePageNavigation(nextPage + 1);
+  const handlePreviousPageMinusOne = () =>
+    handlePageNavigation(previousPage - 1);
   const handleFirstPage = () => handlePageNavigation(1);
   const handleLastPage = () => handlePageNavigation(totalPages);
+
+  const firstPageArrowAndCurrentPageMinusTwoHide = currentPage <= 2;
+  const currentPageMinusOneHide = currentPage === 1;
+  const currentPagePlusOneHide = currentPage === totalPages;
+  const currentPagePlusTwoHide = currentPage >= totalPages - 1;
+  const lastPageArrowHide = currentPage >= totalPages - 2;
 
   return (
     <div className="pagination-container">
       <a
         className="pagination-btn"
-        hidden={currentPage <= 2}
+        hidden={firstPageArrowAndCurrentPageMinusTwoHide}
         onClick={handleFirstPage}
       >
         <img className="page-arrows" src={firstPageArrow} alt="firstpage" />
       </a>
-      <a hidden={currentPage <= 3}>...</a>
       <a
         className="pagination-btn"
-        hidden={currentPage <= 2}
-        onClick={handlePreviousPage2}
+        hidden={firstPageArrowAndCurrentPageMinusTwoHide}
+        onClick={handlePreviousPageMinusOne}
       >
         {currentPage - 2}
       </a>
       <a
         className="pagination-btn"
-        hidden={currentPage === 1}
+        hidden={currentPageMinusOneHide}
         onClick={handlePreviousPage}
       >
         {currentPage - 1}
@@ -46,34 +52,21 @@ export const Pagination = () => {
       <a className="current-page">{currentPage}</a>
       <a
         className="pagination-btn"
-        hidden={currentPage === totalPages}
+        hidden={currentPagePlusOneHide}
         onClick={handleNextPage}
       >
         {currentPage + 1}
       </a>
       <a
         className="pagination-btn"
-        hidden={currentPage === totalPages || currentPage === totalPages - 1}
-        onClick={handleNextPage2}
+        hidden={currentPagePlusTwoHide}
+        onClick={handleNextPagePlusOne}
       >
         {currentPage + 2}
       </a>
       <a
-        hidden={
-          currentPage === totalPages ||
-          currentPage === totalPages - 1 ||
-          currentPage === totalPages - 2
-        }
-      >
-        ...
-      </a>
-      <a
         className="pagination-btn"
-        hidden={
-          currentPage === totalPages ||
-          currentPage === totalPages - 1 ||
-          currentPage === totalPages - 2
-        }
+        hidden={lastPageArrowHide}
         onClick={handleLastPage}
       >
         <img className="page-arrows" src={lastPageArrow} alt="lastpage" />

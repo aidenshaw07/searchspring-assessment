@@ -4,3 +4,10 @@
   align-items: center;
   margin: 0 100px 50px 100px;
 }
+
+@media screen and (max-width: 800px) {
+  .filter-sort-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

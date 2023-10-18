@@ -27,7 +27,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 60px;
+  width: 80px;
   height: 80px;
 }
 
@@ -46,15 +46,11 @@
   .search-cart-container {
     width: 50%;
   }
-  .shopping-cart-container {
-    width: 50px;
-    height: 60px;
-  }
 }
 
 @media screen and (max-width: 750px) {
   .search-cart-container {
-    width: 60%;
+    width: 70%;
   }
 }
 
@@ -63,5 +59,8 @@
     margin-left: 15px;
     width: 80px;
     height: 40px;
+  }
+  .search-cart-container {
+    width: 60%;
   }
 }

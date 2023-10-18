@@ -5,15 +5,20 @@
 }
 
 .search-bar {
-  border: 1px solid #222831;
+  border: 1px solid #d3d6db;
   border-radius: 5px;
   padding: 10px 20px;
   width: 100%;
-  font-size: 18px;
+  font-size: 1rem;
   outline: none;
   box-shadow: 2px 3px 5px 0px rgba(34, 40, 49, 0.75);
   -webkit-box-shadow: 2px 3px 5px 0px rgba(34, 40, 49, 0.75);
   -moz-box-shadow: 2px 3px 5px 0px rgba(34, 40, 49, 0);
+  &:focus-visible,
+  &:hover {
+    outline: none;
+    border-color: #222831;
+  }
 }
 
 .search-bar-btn {

@@ -9,11 +9,11 @@ import "./footer.scss";
 export const Footer = () => {
   return (
     <div className="footer-container">
-      <div className="company-logo">
+      <div className="company-logo-container">
         <img src={herboutique} alt="site-logo" />
         <div>© 2023 Her Boutique</div>
       </div>
-      <div className="footer-contact-info">
+      <div className="footer-contact-info-container">
         <img src={locationIcon} alt="location-icon" />
         <div>1234 Main St, NY, USA 10001</div>
         <img src={phoneIcon} alt="phone-icon" />
@@ -21,7 +21,7 @@ export const Footer = () => {
         <img src={emailIcon} alt="email-icon" />
         <a href="mailto:support@herboutique.com">support@herboutique.com</a>
       </div>
-      <div className="footer-about">
+      <div className="footer-about-container">
         <div>About The Company</div>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit.
