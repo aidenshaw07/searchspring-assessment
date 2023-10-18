@@ -16,6 +16,8 @@ export const App = () => {
   const setData = useStore((state) => state.setData);
   const setLoading = useStore((state) => state.setLoading);
   const setTotalPages = useStore((state) => state.setTotalPages);
+  const setNextPage = useStore((state) => state.setNextPage);
+  const setPreviousPage = useStore((state) => state.setPreviousPage);
 
   const getInitialData = async () => {
     try {
@@ -31,6 +33,8 @@ export const App = () => {
       const res = await axios.get(url);
       setData(res.data);
       setTotalPages(res.data.pagination.totalPages);
+      setNextPage(res.data.pagination.nextPage);
+      setPreviousPage(res.data.pagination.previousPage);
     } catch (error) {
       console.error(error);
     } finally {
