@@ -1,7 +1,5 @@
 import { CartItem } from "../cart-item/cart-item";
 import { useStore } from "../../zustand/store";
-import { Dropdown } from "../dropdown/dropdown";
-import { SortItems } from "../sort-items/sort-items";
 import "./hero.scss";
 
 export const Hero = () => {
@@ -9,8 +7,6 @@ export const Hero = () => {
 
   return (
     <>
-      <Dropdown />
-      <SortItems />
       <div className="container-hero">
         {data.results &&
           data.results.map((item) => <CartItem key={item.id} item={item} />)}
