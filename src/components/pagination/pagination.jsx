@@ -1,4 +1,6 @@
 import { useStore } from "../../zustand/store";
+import firstPageArrow from "../../assets/firstpage-arrow.svg";
+import lastPageArrow from "../../assets/lastpage-arrow.svg";
 import "./pagination.scss";
 
 export const Pagination = () => {
@@ -24,7 +26,7 @@ export const Pagination = () => {
         hidden={currentPage <= 2}
         onClick={handleFirstPage}
       >
-        First Page
+        <img className="page-arrows" src={firstPageArrow} alt="firstpage" />
       </a>
       <a hidden={currentPage <= 3}>...</a>
       <a
@@ -74,7 +76,7 @@ export const Pagination = () => {
         }
         onClick={handleLastPage}
       >
-        Last Page
+        <img className="page-arrows" src={lastPageArrow} alt="lastpage" />
       </a>
     </div>
   );
