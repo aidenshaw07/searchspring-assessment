@@ -1,7 +1,8 @@
 import { useStore } from "../../zustand/store";
+import "./dropdowns.scss";
 
 const dropdownOptions = [
-  { value: "", label: "All" },
+  { value: "", label: "Filter By" },
   { value: "shirts", label: "Shirts" },
   { value: "t-shirts", label: "T-Shirts" },
   { value: "dresses", label: "Dresses" },
@@ -23,7 +24,7 @@ const dropdownOptions = [
   { value: "jewelry", label: "Jewelry" },
 ];
 
-export const Dropdown = () => {
+export const FilterByDropdown = () => {
   const filteredTerm = useStore((state) => state.filteredTerm);
   const setFilteredTerm = useStore((state) => state.setFilteredTerm);
   const setSearchTerm = useStore((state) => state.setSearchTerm);
@@ -39,8 +40,12 @@ export const Dropdown = () => {
   };
 
   return (
-    <div>
-      <select value={filteredTerm} onChange={handleDropdownChange}>
+    <div className="dropdown-container">
+      <select
+        className="select-box"
+        value={filteredTerm}
+        onChange={handleDropdownChange}
+      >
         {dropdownOptions.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}

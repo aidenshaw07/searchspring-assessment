@@ -53,8 +53,8 @@ export const App = () => {
   return (
     <>
       <Navbar getInitialData={getInitialData} />
-      <FilterSortControls />
       <Pagination />
+      <FilterSortControls />
       <Hero />
       <Pagination />
       <Footer />
