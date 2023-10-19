@@ -31,6 +31,8 @@ export const FilterByDropdown = () => {
   const setCurrentPage = useStore((state) => state.setCurrentPage);
   const setSortOption = useStore((state) => state.setSortOption);
 
+  // The handleDropdownChange function is responsible for updating the filteredTerm state variable.
+
   const handleDropdownChange = (e) => {
     const selectedValue = e.target.value;
     setFilteredTerm(selectedValue);

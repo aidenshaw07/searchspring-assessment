@@ -9,9 +9,13 @@ const dropdownOptions = [
   { value: "sort.title=desc", label: "Name Z-A" },
 ];
 
+// The SortByDropdown component is responsible for rendering the dropdown menu for sorting the items.
+
 export const SortByDropdown = () => {
   const sortOption = useStore((state) => state.sortOption);
   const setSortOption = useStore((state) => state.setSortOption);
+
+  // The handleDropdownChange function is responsible for updating the sortOption state variable.
 
   const handleDropdownChange = (e) => {
     const selectedValue = e.target.value;

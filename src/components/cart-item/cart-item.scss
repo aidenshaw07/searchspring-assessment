@@ -28,6 +28,7 @@
 }
 
 .cart-item-btn {
+  border-radius: 3px;
   border: none;
   width: 100px;
   height: 30px;
@@ -44,12 +45,14 @@
 }
 
 .cart-item-btn span {
+  display: block;
   text-align: center;
   font-size: 1rem;
-  line-height: 30px;
+  line-height: 29px;
   color: #34495e;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
   transition: all 0.3s ease-out;
-  display: block;
 }
 
 .cart-item-btn span:hover {

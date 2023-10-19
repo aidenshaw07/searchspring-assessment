@@ -6,6 +6,8 @@ export const CartItem = ({ item }) => {
   const shoppingCart = useStore((state) => state.shoppingCart);
   const setShoppingCart = useStore((state) => state.setShoppingCart);
 
+  // The handleAddToCart function is responsible for updating the shoppingCart state variable.
+
   const handleAddToCart = () => {
     setShoppingCart(parseInt(shoppingCart + 1));
   };

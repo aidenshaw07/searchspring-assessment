@@ -10,6 +10,8 @@ export const Pagination = () => {
   const nextPage = useStore((state) => state.nextPage);
   const previousPage = useStore((state) => state.previousPage);
 
+  // The handlePageNavigation function is responsible for updating the current page in the state when the user clicks on a page number.
+
   const handlePageNavigation = (page) => setCurrentPage(page);
 
   const handleNextPage = () => handlePageNavigation(nextPage);
@@ -19,6 +21,8 @@ export const Pagination = () => {
     handlePageNavigation(previousPage - 1);
   const handleFirstPage = () => handlePageNavigation(1);
   const handleLastPage = () => handlePageNavigation(totalPages);
+
+  // Variables below are used to hide the page numbers and arrows
 
   const firstPageArrowAndCurrentPageMinusTwoHide = currentPage <= 2;
   const currentPageMinusOneHide = currentPage === 1;

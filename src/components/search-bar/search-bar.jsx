@@ -9,6 +9,8 @@ export const SearchBar = ({ getInitialData }) => {
   const setFilteredTerm = useStore((state) => state.setFilteredTerm);
   const setSortOption = useStore((state) => state.setSortOption);
 
+  // The handleSeach function is responsible for updating the searchTerm in the state when the user clicks on the search icon or presses the enter key.
+
   const handleSeach = () => {
     if (searchTerm.trim() !== "") {
       setSearchTerm(searchTerm);
@@ -18,6 +20,8 @@ export const SearchBar = ({ getInitialData }) => {
       getInitialData();
     }
   };
+
+  // The handleKeyPress function is responsible for updating the searchTerm in the state when the user presses the enter key.
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
@@ -31,7 +35,7 @@ export const SearchBar = ({ getInitialData }) => {
         type="text"
         value={searchTerm}
         className="search-bar"
-        placeholder="Search for products..."
+        placeholder="Search for products"
         onKeyDown={handleKeyPress}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
