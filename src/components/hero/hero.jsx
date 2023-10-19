@@ -5,6 +5,8 @@ import "./hero.scss";
 export const Hero = () => {
   const data = useStore((state) => state.data);
 
+  // The Hero component is responsible for rendering the CartItem component for each item in the data array.
+
   return (
     <>
       <div className="container-hero">

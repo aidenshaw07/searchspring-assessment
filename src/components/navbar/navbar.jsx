@@ -7,6 +7,8 @@ import "./navbar.scss";
 export const Navbar = ({ getInitialData }) => {
   const shoppingCart = useStore((state) => state.shoppingCart);
 
+  // The goToHomePage function is responsible for redirecting the user to the home page when the logo is clicked.
+
   const goToHomePage = () => {
     window.location.href = "/";
   };

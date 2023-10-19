@@ -6,9 +6,9 @@ import { Hero } from "./components/hero/hero";
 import { Pagination } from "./components/pagination/pagination";
 import { FilterSortControls } from "./components/filter-sort-controls/filter-sort-controls";
 import { Footer } from "./components/footer/footer";
+import { LoadingOverlay } from "./components/loader/loading-spinner";
 import axios from "axios";
 import "./App.scss";
-import { LoadingOverlay } from "./components/loader/loading-spinner";
 
 export const App = () => {
   const loading = useStore((state) => state.loading);
@@ -21,6 +21,8 @@ export const App = () => {
   const setTotalPages = useStore((state) => state.setTotalPages);
   const setNextPage = useStore((state) => state.setNextPage);
   const setPreviousPage = useStore((state) => state.setPreviousPage);
+
+  // getInitialData function handles data retrieval from the API and state updates. It's triggered on page load, page number change, sort option change, searches, and filters.
 
   const getInitialData = async () => {
     try {
@@ -49,16 +51,18 @@ export const App = () => {
     getInitialData();
   }, [currentPage, filteredTerm, sortOption]);
 
+  // The loading overlay is displayed when the loading state is true.
+
   if (loading) return <LoadingOverlay show={loading} />;
 
   return (
-    <>
+    <div className="app-container">
       <Navbar getInitialData={getInitialData} />
       <Pagination />
       <FilterSortControls />
       <Hero />
       <Pagination />
       <Footer />
-    </>
+    </div>
   );
 };

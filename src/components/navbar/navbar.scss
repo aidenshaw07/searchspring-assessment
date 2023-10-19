@@ -3,9 +3,9 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #222831;
-  box-shadow: -1px 4px 5px 0px rgba(34, 40, 49, 0.61);
-  -webkit-box-shadow: -1px 4px 5px 0px rgba(34, 40, 49, 0.61);
-  -moz-box-shadow: -1px 4px 5px 0px rgba(34, 40, 49, 0.61);
+  box-shadow: -1px 3px 5px 0px rgba(34, 40, 49, 0.61);
+  -webkit-box-shadow: -1px 3px 5px 0px rgba(34, 40, 49, 0.61);
+  -moz-box-shadow: -1px 3px 5px 0px rgba(34, 40, 49, 0.61);
   margin-bottom: 20px;
 }
 
@@ -62,6 +62,14 @@
 @media screen and (max-width: 950px) {
   .search-cart-container {
     width: 50%;
+  }
+  .shopping-cart-container {
+    width: 50px;
+    height: 50px;
+  }
+  .shopping-cart-container img {
+    width: 30px;
+    height: 30px;
   }
 }
 
