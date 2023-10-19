@@ -6,7 +6,7 @@ This project called HerBoutique and it uses Searchspring's API to display a vari
 
 ### Deployed Site
 
-[Her Boutique](#https://herboutique.netlify.app/)
+[Her Boutique](https://herboutique.netlify.app/)
 
 ### Technologies Used
 
