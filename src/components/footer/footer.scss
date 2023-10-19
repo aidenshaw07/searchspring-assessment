@@ -55,6 +55,10 @@
   margin-left: 15px;
 }
 
+.footer-about-container img:hover {
+  transform: scale(1.1);
+}
+
 @media screen and (max-width: 950px) {
   .footer-container {
     display: block;
