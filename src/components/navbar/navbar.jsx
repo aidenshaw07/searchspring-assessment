@@ -7,9 +7,18 @@ import "./navbar.scss";
 export const Navbar = ({ getInitialData }) => {
   const shoppingCart = useStore((state) => state.shoppingCart);
 
+  const goToHomePage = () => {
+    window.location.href = "/";
+  };
+
   return (
     <div className="navbar-container">
-      <img className="logo" src={herboutique} alt="site-logo" />
+      <img
+        className="logo"
+        onClick={goToHomePage}
+        src={herboutique}
+        alt="site-logo"
+      />
       <div className="search-cart-container">
         <SearchBar getInitialData={getInitialData} />
         <div className="shopping-cart-container">
