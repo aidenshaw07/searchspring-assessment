@@ -1,5 +1,7 @@
 import { useStore } from "../../zustand/store";
+import fallbackImg from "../../assets/no-image-available.jpg";
 import "./cart-item.scss";
+import { useState } from "react";
 
 export const CartItem = ({ item }) => {
   const shoppingCart = useStore((state) => state.shoppingCart);
@@ -13,7 +15,14 @@ export const CartItem = ({ item }) => {
 
   return (
     <div className="container-cart-item">
-      <img src={thumbnailImageUrl} alt={name} />
+      <img
+        src={thumbnailImageUrl}
+        onError={(e) => {
+          e.target.src = fallbackImg;
+        }}
+        style={{ width: "267px", height: "400px" }}
+        alt={name}
+      />
       <div className="cart-item-title">{name}</div>
       <div className="cart-item-actions">
         {msrp > price ? (
