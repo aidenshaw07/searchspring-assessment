@@ -10,11 +10,13 @@ export const SearchBar = ({ getInitialData }) => {
   const setSortOption = useStore((state) => state.setSortOption);
 
   const handleSeach = () => {
-    setSearchTerm(searchTerm);
-    setCurrentPage(1);
-    setFilteredTerm("");
-    setSortOption("");
-    getInitialData();
+    if (searchTerm.trim() !== "") {
+      setSearchTerm(searchTerm);
+      setCurrentPage(1);
+      setFilteredTerm("");
+      setSortOption("");
+      getInitialData();
+    }
   };
 
   const handleKeyPress = (e) => {
