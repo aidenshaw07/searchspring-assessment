@@ -42,6 +42,17 @@
   height: 40px;
 }
 
+.shopping-cart-container span {
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  top: -10px;
+  left: -10px;
+  background-color: #352f44;
+  border-radius: 50%;
+  padding: 0 5px;
+}
+
 @media screen and (max-width: 1275px) {
   .search-cart-container {
     width: 40%;

@@ -31,6 +31,7 @@ export const SearchBar = ({ getInitialData }) => {
         type="text"
         value={searchTerm}
         className="search-bar"
+        placeholder="Search for products..."
         onKeyDown={handleKeyPress}
         onChange={(e) => setSearchTerm(e.target.value)}
       />

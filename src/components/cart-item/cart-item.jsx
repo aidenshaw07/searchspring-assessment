@@ -8,7 +8,7 @@ export const CartItem = ({ item }) => {
   const setShoppingCart = useStore((state) => state.setShoppingCart);
 
   const handleAddToCart = () => {
-    setShoppingCart(shoppingCart + 1);
+    setShoppingCart(parseInt(shoppingCart + 1));
   };
 
   const { name, price, msrp, thumbnailImageUrl } = item;

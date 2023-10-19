@@ -10,7 +10,7 @@ export const useStore = create((set) => ({
   nextPage: "",
   previousPage: "",
   totalPages: "",
-  shoppingCart: 0,
+  shoppingCart: "",
   setData: (data) => set((state) => ({ data })),
   setSearchTerm: (searchTerm) => set((state) => ({ searchTerm })),
   setFilteredTerm: (filteredTerm) => set((state) => ({ filteredTerm })),

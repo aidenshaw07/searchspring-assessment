@@ -23,7 +23,7 @@ export const Navbar = ({ getInitialData }) => {
         <SearchBar getInitialData={getInitialData} />
         <div className="shopping-cart-container">
           <img src={shoppingCartIcon} alt="shopping-cart" />
-          {shoppingCart}
+          <span>{shoppingCart}</span>
         </div>
       </div>
     </div>
