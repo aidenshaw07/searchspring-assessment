@@ -1,7 +1,6 @@
 import { useStore } from "../../zustand/store";
 import fallbackImg from "../../assets/no-image-available.jpg";
 import "./cart-item.scss";
-import { useState } from "react";
 
 export const CartItem = ({ item }) => {
   const shoppingCart = useStore((state) => state.shoppingCart);
