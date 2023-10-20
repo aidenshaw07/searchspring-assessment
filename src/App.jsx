@@ -11,6 +11,7 @@ import axios from "axios";
 import "./App.scss";
 
 export const App = () => {
+  const data = useStore((state) => state.data);
   const loading = useStore((state) => state.loading);
   const searchTerm = useStore((state) => state.searchTerm);
   const filteredTerm = useStore((state) => state.filteredTerm);
@@ -51,6 +52,10 @@ export const App = () => {
     getInitialData();
   }, [currentPage, filteredTerm, sortOption]);
 
+  // The hideComponent variable is used to hide the Pagination and FilterSortControl components when there are no results in the data array.
+
+  const hideComponent = data.results && data.results.length <= 0;
+
   // The loading overlay is displayed when the loading state is true.
 
   if (loading) return <LoadingOverlay show={loading} />;
@@ -58,10 +63,10 @@ export const App = () => {
   return (
     <div className="app-container">
       <Navbar getInitialData={getInitialData} />
-      <Pagination />
-      <FilterSortControls />
+      {hideComponent ? null : <Pagination />}
+      {hideComponent ? null : <FilterSortControls />}
       <Hero />
-      <Pagination />
+      {hideComponent ? null : <Pagination />}
       <Footer />
     </div>
   );
