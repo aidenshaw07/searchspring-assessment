@@ -1,13 +1,24 @@
-.container-hero {
+.hero-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(275px, 100%), 1fr));
   gap: 50px 25px;
   margin: 0 75px 35px 75px;
-  min-height: 200px;
+  min-height: 400px;
+}
+
+.no-results-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.no-results-container span {
+  color: red;
 }
 
 @media screen and (max-width: 1275px) {
-  .container-hero {
+  .hero-container {
     margin: 0 50px 35px 50px;
   }
 }

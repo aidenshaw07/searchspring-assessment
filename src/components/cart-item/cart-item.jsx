@@ -15,7 +15,7 @@ export const CartItem = ({ item }) => {
   const { name, price, msrp, thumbnailImageUrl } = item;
 
   return (
-    <div className="container-cart-item">
+    <div className="cart-item-container">
       <img
         src={thumbnailImageUrl}
         onError={(e) => {
